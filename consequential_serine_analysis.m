@@ -46,6 +46,8 @@ clearvars filename delimiter formatSpec fileID dataArray ans;
 
 N = height(tailseqall); 
 smatrix=zeros(N);
+AA = input('Please input amino acid you want to analysis ','s');
+
 
 for i = 1:N 
 
@@ -53,7 +55,7 @@ tail = tailseqall{i,1};
 
 L=strlength (tail);
 
-serines=strfind(tail, 'S');
+serines=strfind(tail, AA);
 all_S=length(serines);
 % Find single S positions 
 t = diff(serines) == 1;
